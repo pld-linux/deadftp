@@ -1,0 +1,13 @@
+diff -urN deadftp-0.1.3.orig/deadftp.desktop deadftp-0.1.3/deadftp.desktop
+--- deadftp-0.1.3.orig/deadftp.desktop	2000-08-19 15:14:31.000000000 +0200
++++ deadftp-0.1.3/deadftp.desktop	2004-07-04 02:49:37.497325064 +0200
+@@ -1,7 +1,9 @@
+ [Desktop Entry]
+ Name=DeadFTP
+ Comment=GNOME FTP Client
++Comment[pl]=Klient FTP dla GNOME
+ Exec=deadftp
+ Icon=deadftp.png
+ Terminal=0
+ Type=Application
++Categories=GTK;GNOME;Network;FileTransfer;
