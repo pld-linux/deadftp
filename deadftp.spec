@@ -2,7 +2,7 @@ Summary:	A Graphical FTP client
 Summary(pl):	Graficzny klient FTP
 Name:		deadftp
 Version:	0.1.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/deadftp/%{name}-%{version}.tar.bz2
