@@ -2,11 +2,12 @@ Summary:	A Graphical FTP client
 Summary(pl):	Graficzny klient FTP
 Name:		deadftp
 Version:	0.1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/deadftp/%{name}-%{version}.tar.bz2
 # Source0-md5:	b5bd88ef57c7d7a653621ef1c835f790
+Patch0:		%{name}-desktop.patch
 URL:		http://deadftp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,6 +29,7 @@ i hostmanagera.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -45,7 +47,7 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Network/FTP
+	Applicationsdir=%{_desktopdir}
 
 %find_lang %{name} --with-gnome
 
@@ -58,4 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/deadftp
 %{_pixmapsdir}/*
-%{_applnkdir}/Network/FTP/*
+%{_desktopdir}/*
