@@ -24,7 +24,7 @@ hostmanager.
 
 %description -l pl
 DeadFTP jest klientem FTP dla ¶rodowiska GNOME. DeadFTP zapewnia
-podstawow± funkcjonalno¶c klienta FTP, jak równie¿ kolejkê transferów
+podstawow± funkcjonalno¶æ klienta FTP, jak równie¿ kolejkê transferów
 i hostmanagera.
 
 %prep
