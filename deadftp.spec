@@ -5,8 +5,6 @@ Version:	0.1.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/deadftp/%{name}-%{version}.tar.bz2
 URL:		http://deadftp.sourceforge.net/ 
 BuildRequires:	autoconf
