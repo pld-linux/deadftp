@@ -1,6 +1,6 @@
 Summary:	A Graphical FTP client
 Name:		deadftp
-Version:	0.1.1
+Version:	0.1.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -8,9 +8,12 @@ Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/deadftp/%{name}-%{version}.tar.bz2
 URL:		http://deadftp.sourceforge.net/ 
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel >= 1.2.0
 BuildRequires:	libglade-devel >= 0.11
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -24,7 +27,11 @@ hostmanager.
 %setup -q
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure
 %{__make}
 
