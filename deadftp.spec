@@ -1,4 +1,5 @@
 Summary:	A Graphical FTP client
+Summary(pl):	Graficzny klient FTP
 Name:		deadftp
 Version:	0.1.2
 Release:	1
@@ -22,6 +23,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 DeadFTP is an FTP client for GNOME. DeadFTP provides all basic
 functionality of an FTP client as well as a transfer queue and a
 hostmanager.
+
+%description -l pl
+DeadFTP jest klientem FTP dla ¶rodowiska GNOME. DeadFTP zapewnia
+podstawow± funkcjonalno¶c klienta FTP, jak równie¿ kolejkê transferów
+i hostmanagera.
 
 %prep
 %setup -q
