@@ -1,7 +1,7 @@
 Summary:	A Graphical FTP client
 Summary(pl):	Graficzny klient FTP
 Name:		deadftp
-Version:	0.1.2
+Version:	0.1.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
@@ -31,9 +31,12 @@ i hostmanagera.
 %setup -q
 
 %build
+sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+mv -f configure.in.tmp configure.in
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
-aclocal -I macros
+aclocal -I %{_aclocaldir}/gnome
 autoconf
 automake -a -c -f
 %configure
