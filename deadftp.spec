@@ -1,65 +1,50 @@
-%define nam     deadftp
-%define ver     0.0.9
-%define rel     1
-
-%define prefix          /usr
-%define sysconfdir      /etc
-
 Summary:	A Graphical FTP client
-Name:		%nam
-Version:	%ver
-Release:	%rel
-Copyright:	GPL
-Group:		Applications/Internet
-Source:		http://download.sourceforge.net/deadftp/%{nam}-%{ver}.tar.gz
+Name:		deadftp
+Version:	0.0.9
+Release:	1
+License:	GPL
+Group:		X11/Applications/Networking
+Group(de):	X11/Applikationen/Netzwerkwesen
+Group(pl):	X11/Aplikacje/Sieciowe
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/deadftp/%{name}-%{version}.tar.bz2
 URL:		http://deadftp.sourceforge.net/ 
-BuildRoot: 	/var/tmp/%{name}-buildroot
-Docdir:		%{prefix}/doc
-Packager:	Brandon Lees <brandon2@users.sourceforge.net>
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-libs-devel >= 1.2.0
+BuildRequires:	libglade-devel >= 0.11
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-Requires:       gnome-libs >= 1.2.0
-Requires:       libglade >= 0.11
-Requires:	libxml >= 1.8.9
+%define		_prefix		/usr/X11R6
 
 %description
-DeadFTP is a graphical FTP client for GNOME.  
-
-%changelog
-
-* Sat Sep 16 2000  Brandon <brandon2@users.sourceforge.net>
-
-- Released deadftp-0.0.9
-
-* Wed Aug 30 2000  Brandon Lees <brandon2@users.sourceforge.net>
-
-- Released deadftp-0.0.8
-
-* Wed Aug 23 2000  Brandon Lees <brandon2@users.sourceforge.net>
-
-- Added changelog section to spec file.  
+DeadFTP is an FTP client for GNOME. DeadFTP provides all basic
+functionality of an FTP client as well as a transfer queue and a
+hostmanager.
 
 %prep
-%setup
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure   \
-      --prefix=%{prefix} --sysconfdir=%{sysconfdir}
-
-make
+gettextize --copy --force
+%configure
+%{__make}
 
 %install
-make install-strip \
-	prefix=%{prefix} \
-	sysconfdir=%{sysconfdir} \
-	DESTDIR=$RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	Applicationsdir=%{_applnkdir}/Network/FTP
+
+gzip -9nf AUTHORS ChangeLog NEWS README TODO
+
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-, root, root)
-
-%doc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
-
-%{prefix}/bin/*
-%{prefix}/share/*
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/deadftp
+%{_datadir}/pixmaps/*
+%{_applnkdir}/Network/FTP/*
