@@ -36,7 +36,7 @@ mv -f configure.in.tmp configure.in
 rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal -I %{_aclocaldir}/gnome
+%{__aclocal} -I %{_aclocaldir}/gnome
 %{__autoconf}
 %{__automake}
 %configure
