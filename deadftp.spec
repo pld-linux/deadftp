@@ -15,7 +15,6 @@ BuildRequires:	libglade-gnome-devel >= 0.11
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 DeadFTP is an FTP client for GNOME. DeadFTP provides all basic
