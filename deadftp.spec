@@ -1,6 +1,6 @@
 Summary:	A Graphical FTP client
 Name:		deadftp
-Version:	0.0.9
+Version:	0.1.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
