@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/deadftp/%{name}-%{version}.tar.bz2
+# Source0-md5:	b5bd88ef57c7d7a653621ef1c835f790
 URL:		http://deadftp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
