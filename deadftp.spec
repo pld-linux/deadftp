@@ -5,7 +5,7 @@ Version:	0.1.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/deadftp/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/deadftp/%{name}-%{version}.tar.bz2
 URL:		http://deadftp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -14,7 +14,6 @@ BuildRequires:	gnome-libs-devel >= 1.2.0
 BuildRequires:	libglade-gnome-devel >= 0.11
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 DeadFTP is an FTP client for GNOME. DeadFTP provides all basic
