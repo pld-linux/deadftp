@@ -1,5 +1,5 @@
 Summary:	A Graphical FTP client
-Summary(pl.UTF-8):   Graficzny klient FTP
+Summary(pl.UTF-8):	Graficzny klient FTP
 Name:		deadftp
 Version:	0.1.3
 Release:	4
