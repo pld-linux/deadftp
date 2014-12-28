@@ -11,7 +11,7 @@ Patch0:		%{name}-desktop.patch
 URL:		http://deadftp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-libs-devel >= 1.2.0
 BuildRequires:	libglade-gnome-devel >= 0.11
 BuildRequires:	libtool
